@@ -1,0 +1,107 @@
+#header{
+    background-color:black;
+    display: flex;
+    flex-direction: column;
+    /*border-radius: 10px;*/
+    
+}
+
+/************Estilo do menu********************/
+
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+li{
+    float: left;
+}
+
+li a, .drop_btt{
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 16px;
+    color: white;
+}
+
+li a:hover, .drop_btt:hover, .dropdown:hover{
+    background-color: red;
+    color: black;
+    border-radius: 5px;
+}
+
+.dropdown_content{
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+    background-color: white;
+    display: none;
+}
+
+.dropdown_content a{
+    padding: 14px 16px;
+    display: block;
+    text-align: left;
+    color: black;
+}
+
+.dropdown_content a:hover{
+    background-color: black;
+    color: red;
+}
+
+.dropdown:hover .dropdown_content{
+    display: block;
+}
+
+/************Estilo do botão do menu para telas de celular**********/
+
+#btt_menu{
+    display: none;
+}
+
+label[for="btt_menu"]{
+    display: none;
+    position: absolute;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+@media(max-width: 800px){
+    label[for="btt_menu"]{
+        display: block;
+    }
+
+    #btt_menu:checked ~ #nav{
+        display: block;
+    }
+
+    #nav{
+        display: none;
+    }
+
+    #nav li{
+        float: none;
+        text-align: center;
+    }
+
+    #nav .dropdown_content{
+        position: relative;
+    }
+
+    #nav .dropdown_content a{
+        text-align: center;
+    }
+}
+
+@media(max-width: 425px){
+    label[for="btt_menu"]{
+        font-size: 40px
+    }
+}
